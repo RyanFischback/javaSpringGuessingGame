@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Congratulations!</h1>
+<!-- for details on HTML variable insertion see the Thymeleaf website
+https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#introducing-thymeleaf -->
+<form action="#" th:action="@{/guess}" th:object="${session.sessionGuess}" method="post">
+    <p th:text="'You Guessed Correct! The number was: ' + ${session.sessionGuess.guessNum}"></p>
+    <p th:text="'Attempts: ' + ${session.sessionCounter}"></p>
+    <a href="/guess">Play Again?</a>
+</form>
+</body>
+</html>

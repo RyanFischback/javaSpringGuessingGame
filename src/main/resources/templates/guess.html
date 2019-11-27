@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Web Guessing Game</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Guessing Game</h1>
+<!-- for details on HTML variable insertion see the Thymeleaf website
+https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#introducing-thymeleaf -->
+<form action="#" th:action="@{/guess}" th:object="${guess}" method="post">
+    <p>Enter your Guess: <input type="text" th:field="*{guessNum}"/></p>
+    <p th:text="'Attempts: ' + ${guess.getGuessCounter()}"></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+</body>
+</html>
